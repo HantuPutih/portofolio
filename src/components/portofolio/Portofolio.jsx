@@ -1,9 +1,9 @@
-import './portofolio.scss'
+import "./portofolio.scss";
 
 export default function Portofolio() {
-    return (
-        <div className="portofolio">
-            portofolio
-        </div>
-    )
+  return (
+    <div className="portofolio" id="portofolio">
+      portofolio
+    </div>
+  );
 }
