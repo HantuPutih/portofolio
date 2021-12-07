@@ -1,19 +1,34 @@
 import "./topbar.scss";
+import { Person, Mail } from "@material-ui/icons"
 
-import ContactMailIcon from "@mui/icons-material/ContactMail";
-export default function Topbar() {
+export default function Topbar({menuOpen, setMenuOpen}) {
   return (
-    <div className="topbar">
+    <div className={"topbar " + (menuOpen && "active") } >
       <div className="wrapper">
         <div className="left">
           <a href="#intro" className="logo">
             Logo
           </a>
           <div className="itemContainer">
-            <ContactMailIcon />
+            <Person className="icon" />
+            <span>
+              +62 999 - 2222 - 2222
+            </span>
+          </div>
+          <div className="itemContainer">
+            <Mail />
+            <span className="icon" >
+              thanatos.juliano@gmail.com
+            </span>
           </div>
         </div>
-        <div className="right">this is right</div>
+        <div className="right">
+          <div className="hamburger" onClick={()=> setMenuOpen(!menuOpen)}>
+            <span className="line1"></span>
+            <span className="line2"></span>
+            <span className="line3"></span>
+          </div>
+        </div>
       </div>
     </div>
   );
