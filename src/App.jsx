@@ -2,7 +2,7 @@ import "./app.scss";
 import Topbar from "./components/topbar/Topbar";
 import Intro from "./components/intro/Intro";
 import Portofolio from "./components/portofolio/Portofolio";
-import Works from "./components/work/Works";
+import Works from "./components/works/Works";
 import Testimonials from "./components/testimonials/Testimonials";
 import Contact from "./components/contact/Contact";
 import { useState } from "react";

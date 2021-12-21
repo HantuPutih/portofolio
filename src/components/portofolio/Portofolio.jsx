@@ -1,9 +1,17 @@
 import "./portofolio.scss";
 import PortofolioList from "../portofolioList/PotofolioList";
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import {
+  featuredPortfolio,
+  webPortfolio,
+  mobilePortfolio,
+  designPortfolio,
+  contentPortfolio,
+} from '../../data.js'
 
 export default function Portofolio() {
   const [selected, setSelected] = useState('featured');
+  const [data, setData] = useState([]);
   const list = [
     {
       id: 'featured',
@@ -22,10 +30,32 @@ export default function Portofolio() {
       title: 'Design'
     },
     {
-      id: 'branding',
-      title: 'Branding'
+      id: 'content',
+      title: 'Content'
     },
   ]
+
+  useEffect(() => {
+    switch (selected) {
+      case 'featured' :
+        setData(featuredPortfolio)
+        break;
+      case 'web' :
+        setData(webPortfolio)
+        break;
+      case 'mobile' :
+        setData(mobilePortfolio)
+        break;
+      case 'design' :
+        setData(designPortfolio)
+        break;
+      case 'Content' :
+        setData(contentPortfolio)
+        break;
+      default:
+        setData(featuredPortfolio)
+    }
+  }, [selected])
 
   return (
     <div className="portofolio" id="portofolio">
@@ -42,36 +72,15 @@ export default function Portofolio() {
 
       </ul>
       <div className="container">
-        <div className="item">
-          <img
-            src="https://1.bp.blogspot.com/-HPeTAZw3ip8/XIG46d9HFwI/AAAAAAAAR0g/3VkKSjVbxcY2g-zR0HD7Mh3pKcoUlJ2KACLcBGAs/s1600/Pengertian%2Bdan%2BJenis%2BWebsite%2BBerdasarkan%2BFungsinya.jpg" alt=""/>
-          <h3>Banking App</h3>
-        </div>
-        <div className="item">
-          <img
-            src="https://1.bp.blogspot.com/-HPeTAZw3ip8/XIG46d9HFwI/AAAAAAAAR0g/3VkKSjVbxcY2g-zR0HD7Mh3pKcoUlJ2KACLcBGAs/s1600/Pengertian%2Bdan%2BJenis%2BWebsite%2BBerdasarkan%2BFungsinya.jpg" alt=""/>
-          <h3>Banking App</h3>
-        </div>
-        <div className="item">
-          <img
-            src="https://1.bp.blogspot.com/-HPeTAZw3ip8/XIG46d9HFwI/AAAAAAAAR0g/3VkKSjVbxcY2g-zR0HD7Mh3pKcoUlJ2KACLcBGAs/s1600/Pengertian%2Bdan%2BJenis%2BWebsite%2BBerdasarkan%2BFungsinya.jpg" alt=""/>
-          <h3>Banking App</h3>
-        </div>
-        <div className="item">
-          <img
-            src="https://1.bp.blogspot.com/-HPeTAZw3ip8/XIG46d9HFwI/AAAAAAAAR0g/3VkKSjVbxcY2g-zR0HD7Mh3pKcoUlJ2KACLcBGAs/s1600/Pengertian%2Bdan%2BJenis%2BWebsite%2BBerdasarkan%2BFungsinya.jpg" alt=""/>
-          <h3>Banking App</h3>
-        </div
-        ><div className="item">
-          <img
-            src="https://1.bp.blogspot.com/-HPeTAZw3ip8/XIG46d9HFwI/AAAAAAAAR0g/3VkKSjVbxcY2g-zR0HD7Mh3pKcoUlJ2KACLcBGAs/s1600/Pengertian%2Bdan%2BJenis%2BWebsite%2BBerdasarkan%2BFungsinya.jpg" alt=""/>
-          <h3>Banking App</h3>
-        </div>
-        <div className="item">
-          <img
-            src="https://1.bp.blogspot.com/-HPeTAZw3ip8/XIG46d9HFwI/AAAAAAAAR0g/3VkKSjVbxcY2g-zR0HD7Mh3pKcoUlJ2KACLcBGAs/s1600/Pengertian%2Bdan%2BJenis%2BWebsite%2BBerdasarkan%2BFungsinya.jpg" alt=""/>
-          <h3>Banking App</h3>
-        </div>
+        {data.map((d, idx) => {
+          return (
+              <div key={idx} className="item">
+                <img
+                  src={d.img} alt=""/>
+                <h3>{d.title}</h3>
+              </div>
+            )
+        })}
       </div>
     </div>
   );
