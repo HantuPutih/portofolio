@@ -7,12 +7,12 @@ export default function Topbar({menuOpen, setMenuOpen}) {
       <div className="wrapper">
         <div className="left">
           <a href="#intro" className="logo">
-            Logo
+            FJ
           </a>
           <div className="itemContainer">
             <Person className="icon" />
             <span>
-              +62 999 - 2222 - 2222
+              +62 878 - 927 - 9098
             </span>
           </div>
           <div className="itemContainer">
