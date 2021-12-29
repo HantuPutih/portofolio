@@ -25,14 +25,14 @@ export default function Portofolio() {
       id: 'mobile',
       title: 'Mobile App'
     },
-    {
-      id: 'design',
-      title: 'Design'
-    },
-    {
-      id: 'content',
-      title: 'Content'
-    },
+    // {
+    //   id: 'design',
+    //   title: 'Design'
+    // },
+    // {
+    //   id: 'content',
+    //   title: 'Content'
+    // },
   ]
 
   useEffect(() => {
@@ -46,12 +46,12 @@ export default function Portofolio() {
       case 'mobile' :
         setData(mobilePortfolio)
         break;
-      case 'design' :
-        setData(designPortfolio)
-        break;
-      case 'Content' :
-        setData(contentPortfolio)
-        break;
+      // case 'design' :
+      //   setData(designPortfolio)
+      //   break;
+      // case 'Content' :
+      //   setData(contentPortfolio)
+      //   break;
       default:
         setData(featuredPortfolio)
     }
@@ -65,8 +65,12 @@ export default function Portofolio() {
       <ul>
         {
           list.map((item ,idx ) => {
-            return <PortofolioList id={item.id} key={idx} title={item.title} active={selected === item.id}
-                                   setSelected={setSelected} />
+            return <PortofolioList
+              id={item.id} key={idx}
+              title={item.title}
+              active={selected === item.id}
+              setSelected={setSelected}
+            />
           })
         }
       </ul>
