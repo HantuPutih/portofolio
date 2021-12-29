@@ -69,7 +69,6 @@ export default function Portofolio() {
                                    setSelected={setSelected} />
           })
         }
-
       </ul>
       <div className="container">
         {data.map((d, idx) => {

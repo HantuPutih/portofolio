@@ -1,11 +1,16 @@
 import "./works.scss";
 import {useState} from "react";
+import arrow from '../../assets/arrow.png'
+import mobile from '../../assets/mobile.png'
+import globe from '../../assets/globe.png'
+import writing from '../../assets/writing.png'
+
 export default function Works() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const data = [
     {
       id: "1",
-      icon: "./assets/mobile.png",
+      icon: mobile,
       title: "Web Design",
       desc:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
@@ -14,7 +19,7 @@ export default function Works() {
     },
     {
       id: "2",
-      icon: "./assets/globe.png",
+      icon: globe,
       title: "Mobile Application",
       desc:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
@@ -23,7 +28,7 @@ export default function Works() {
     },
     {
       id: "3",
-      icon: "./assets/writing.png",
+      icon: writing,
       title: "Branding",
       desc:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
@@ -40,9 +45,9 @@ export default function Works() {
   return (
     <div className="works" id="works">
       <div className="slider" style={{transform: `translateX(-${currentSlide * 100}vw)`}}>
-        {data.map(d => (
+        {data.map((d, i) => (
 
-        <div className="container">
+        <div key={i} className="container">
           <div className="item">
             <div className="left">
               <div className="leftContainer">
@@ -56,19 +61,17 @@ export default function Works() {
               </div>
             </div>
             <div className="right">
-
               <img
                 src={d.img}
                 alt=""/>
             </div>
           </div>
-
         </div>
           ))
         }
       </div>
-      <img src="assets/arrow.png" className="arrow left" alt="" onClick={() => handleClick("left") }/>
-      <img src="assets/arrow.png" className="arrow right" alt="" onClick={() => handleClick("right") }/>
+      <img src={arrow} className="arrow left" alt="" onClick={() => handleClick("left") }/>
+      <img src={arrow} className="arrow right" alt="" onClick={() => handleClick("right") }/>
     </div>
   );
 }

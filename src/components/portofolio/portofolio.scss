@@ -39,8 +39,8 @@
     }
 
     .item {
-      width: 220px;
-      height: 150px;
+      width: 280px;
+      height: 200px;
       border-radius: 20px;
       border: 1px solid lightgrey;
       margin: 10px 20px;
@@ -53,8 +53,8 @@
       cursor: pointer;
 
       @include mobile{
-        width: 130px;
-        height: 100px;
+        width: 135px;
+        height: 105px;
       }
 
       h3{
