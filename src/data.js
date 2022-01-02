@@ -1,9 +1,11 @@
+import oss from'../src/assets/porto/OSS/Screenshot 2021-08-12 224845.png'
+
 export const featuredPortfolio = [
   {
     id: 1,
-    title: "Social Media App",
+    title: "OSS RBA",
     img:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKvdHn8GmPGCO0y3SJqNHACygpm0h9VycMHg&usqp=CAU",
+        oss,
   },
   {
     id: 2,
