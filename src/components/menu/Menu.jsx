@@ -8,16 +8,16 @@ function Menu({ menuOpen, setMenuOpen }) {
           <a href="#intro">Home</a>
         </li>
         <li onClick={() => setMenuOpen(false)}>
-          <a href="#portofolio">portofolio</a>
+          <a href="#portofolio">Portofolio</a>
         </li>
         <li onClick={() => setMenuOpen(false)}>
-          <a href="#works">works</a>
+          <a href="#works">Works</a>
         </li>
         <li onClick={() => setMenuOpen(false)}>
-          <a href="#testimonials">testimonials</a>
+          <a href="#testimonials">Testimonials</a>
         </li>
         <li onClick={() => setMenuOpen(false)}>
-          <a href="#contact">contact</a>
+          <a href="#contact">Contact</a>
         </li>
       </ul>
     </div>
