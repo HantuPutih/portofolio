@@ -1,22 +1,17 @@
 import "./portofolio.scss";
 import PortofolioList from "../portofolioList/PotofolioList";
+
 import {useEffect, useState} from "react";
 import {
-  featuredPortfolio,
   webPortfolio,
   mobilePortfolio,
-  designPortfolio,
-  contentPortfolio,
+  github,
 } from '../../data.js'
 
 export default function Portofolio() {
-  const [selected, setSelected] = useState('featured');
+  const [selected, setSelected] = useState('web');
   const [data, setData] = useState([]);
   const list = [
-    {
-      id: 'featured',
-      title: 'Featured'
-    },
     {
       id: 'web',
       title: 'Web App'
@@ -25,35 +20,34 @@ export default function Portofolio() {
       id: 'mobile',
       title: 'Mobile App'
     },
-    // {
-    //   id: 'design',
-    //   title: 'Design'
-    // },
-    // {
-    //   id: 'content',
-    //   title: 'Content'
-    // },
+    {
+      id: 'github',
+      title: 'My Github'
+    },
   ]
+
+  const goToGithub = (e) => {
+    e.preventDefault()
+    if (selected == 'github') {
+      window.open('https://github.com/HantuPutih', '_blank');
+
+    }
+
+  }
 
   useEffect(() => {
     switch (selected) {
-      case 'featured' :
-        setData(featuredPortfolio)
-        break;
       case 'web' :
         setData(webPortfolio)
         break;
       case 'mobile' :
         setData(mobilePortfolio)
         break;
-      // case 'design' :
-      //   setData(designPortfolio)
-      //   break;
-      // case 'Content' :
-      //   setData(contentPortfolio)
-      //   break;
+      case 'github' :
+        setData(github)
+        break;
       default:
-        setData(featuredPortfolio)
+        setData(webPortfolio)
     }
   }, [selected])
 
@@ -79,6 +73,7 @@ export default function Portofolio() {
           return (
               <div key={idx} className="item">
                 <img
+                  onClick={goToGithub}
                   src={d.img} alt=""/>
                 <h3>{d.title}</h3>
               </div>
