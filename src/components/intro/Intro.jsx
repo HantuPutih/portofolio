@@ -1,9 +1,8 @@
 import "./intro.scss";
 import { init } from "ityped";
 import { useEffect, useRef } from "react";
-import down from '../../assets/down.png'
-import man from '../../assets/man.png'
-
+import down from "../../assets/down.png";
+import man from "../../assets/man.png";
 
 export default function Intro() {
   const textRef = useRef();
@@ -19,6 +18,7 @@ export default function Intro() {
     <div className="intro" id="intro">
       <div className="left">
         <div className="imgContainer">
+          {/*  width="473" height="630" */}
           <img src={man} alt="farid's " />
         </div>
       </div>
