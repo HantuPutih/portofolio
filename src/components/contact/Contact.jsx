@@ -48,7 +48,7 @@ export default function Contact() {
         <h4>
           <PhoneIcon /> &nbsp;{" "}
           <a
-            href="https://api.whatsapp.com/send?phone=6287889278098"
+            href="https://api.whatsapp.com/send?phone=6285946890069"
             rel="noreferrer"
             target="_blank"
           >
