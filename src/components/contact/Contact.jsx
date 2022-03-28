@@ -26,7 +26,7 @@ export default function Contact() {
         <h4><LinkedInIcon/> &nbsp; <a href="https://www.linkedin.com/in/farid-juliano/ "rel="noreferrer"  target="_blank">LinkedIn</a></h4>
         <h4><GitHubIcon/> &nbsp; <a href="https://github.com/HantuPutih"  rel="noreferrer" target="_blank">HantuPutih</a></h4>
         <h4><Mail/>&nbsp; <a href="mailto:thanatos.juliano@gmail.com" rel="noreferrer"> thanatos.juliano@gmail.com </a> </h4>
-        <h4><PhoneIcon/> &nbsp; <a href="https://api.whatsapp.com/send?phone=6287889278098" rel="noreferrer" target="_blank">+62 987-8927-8098</a> </h4>
+        <h4><PhoneIcon/> &nbsp; <a href="https://api.whatsapp.com/send?phone=6287889278098" rel="noreferrer" target="_blank">+62 859-4689-0069</a> </h4>
         <h4><LocationOnIcon/> &nbsp; Jakarta Selatan, Indonesia</h4>
         {/*<form onSubmit={handleSubmit}>
           <input type="text" placeholder="Email"/>
